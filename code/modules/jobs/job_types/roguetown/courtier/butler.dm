@@ -17,20 +17,13 @@
 	min_pq = 3
 	max_pq = null
 	round_contrib_points = 3
+	social_rank = SOCIAL_RANK_YEOMAN
 
 	job_subclasses = list(
 		/datum/advclass/seneschal/seneschal,
 		/datum/advclass/seneschal/headmaid,
 		/datum/advclass/seneschal/chiefbutler
 	)
-
-/datum/job/roguetown/butler/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
-	. = ..()
-	if(ishuman(L))
-		var/mob/living/carbon/human/H = L
-		H.advsetup = 1
-		H.invisibility = INVISIBILITY_MAXIMUM
-		H.become_blind("advsetup") // Classes are for aesthetic clothing only, mechanically they're identical.
 
 /datum/advclass/seneschal
 	traits_applied = list(TRAIT_CICERONE)
