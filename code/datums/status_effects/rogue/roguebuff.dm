@@ -333,6 +333,11 @@
 	desc = "My home. I watch vigilantly and respond swiftly."
 	icon_state = "buff"
 
+/atom/movable/screen/alert/status_effect/buff/knightbufftown
+	name = "Vigilant Knight"
+	desc = "My home. I watch vigilantly and respond swiftly."
+	icon_state = "buff"
+
 /atom/movable/screen/alert/status_effect/buff/barkeepbuff
 	name = "Vigilant Tavernkeep"
 	desc = "My home. I watch vigilantly and respond swiftly."
@@ -388,7 +393,12 @@
 /datum/status_effect/buff/knightbuff
 	id = "knightbuff"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/knightbuff
-	effectedstats = list("constitution" = 2,"endurance" = 1, "speed" = 1,) // more con = my home, i will defend it to the last and all
+	effectedstats = list("constitution" = 1, "perception" = 1)
+	
+/datum/status_effect/buff/knightbufftown
+	id = "knightbufftown"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/knightbufftown
+	effectedstats = list("endurance" = 1, "speed" = 1, "perception" = 1) // lesser buff for being in town, lets them move around
 
 /datum/status_effect/buff/dungeoneerbuff
 	id = "dungeoneerbuff"
@@ -416,6 +426,13 @@
 	var/area/rogue/our_area = get_area(owner)
 	if(!(our_area.keep_area))
 		owner.remove_status_effect(/datum/status_effect/buff/knightbuff)
+
+/datum/status_effect/buff/knightbufftown/process()
+
+	.=..()
+	var/area/rogue/our_area = get_area(owner)
+	if(!(our_area.town_area))
+		owner.remove_status_effect(/datum/status_effect/buff/knightbufftown)
 
 /datum/status_effect/buff/wardenbuff/process()
 
