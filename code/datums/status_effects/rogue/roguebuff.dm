@@ -590,6 +590,7 @@
 		oh_god_it_hurts = FALSE
 		to_chat(owner, span_warning("The vice-like grip around your mortal coil eases, reluctantly. Yet, you feel hollow, all the same..."))
 		qdel(src) // clear the vow if someone somehow saves us
+		return
 
 	var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal_rogue(get_turf(owner))
 	H.color = "#a5a5a5"
