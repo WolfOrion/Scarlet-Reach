@@ -61,47 +61,35 @@
 	if(HAS_TRAIT(user, TRAIT_CURSE_RAVOX))
 		chance2hit -= 30
 
-	chance2hit = CLAMP(chance2hit, 5, 93)
+	chance2hit = CLAMP(chance2hit, 5, 95)
 
-	if(prob(chance2hit))
-		if(check_zone(zone) == zone)
+	var/precision_roll = FALSE
+	var/accuracy_roll = FALSE
+	var/whiff_roll = FALSE
+	var/combined_whiff = (chance2hit * user.STAPER * 0.05) / 100
+
+	if(check_zone(zone) == zone)
+		prob(chance2hit) ? accuracy_roll = TRUE : accuracy_roll = FALSE	
+		if(accuracy_roll)
 			return zone
 		else
-			if(prob(chance2hit - 10))
-				return zone
-			else
-				return BODY_ZONE_CHEST
-	else
-		if(prob(chance2hit+(user.STAPER - 10)))
-			if(check_zone(zone) == zone)
-				return zone
-			to_chat(user, span_warning("Accuracy fail! [chance2hit]%"))
-			if(user.STAPER >= 11)
-				if(user.client?.prefs.showrolls)
-					return check_zone(zone)
-			else
-				return BODY_ZONE_CHEST
-		else
 			if(user.client?.prefs.showrolls)
-				to_chat(user, span_warning("Double accuracy fail! [chance2hit]%"))
+				to_chat(user, span_warning("Accuracy fail! [chance2hit]%"))
 			return BODY_ZONE_CHEST
-
-	if(prob(chance2hit))
-		return zone
 	else
-		if(prob(chance2hit+(user.STAPER - 10)))
-			if(check_zone(zone) == zone)
-				return zone
-			to_chat(user, span_warning("Accuracy fail! [chance2hit]%"))
-			if(user.STAPER >= 11)
+		prob(chance2hit - 10) ? precision_roll = TRUE : precision_roll = FALSE
+		if(precision_roll)
+			return zone
+		else 
+			prob((chance2hit) * user.STAPER * 0.05) ? whiff_roll = TRUE : whiff_roll = FALSE
+			if(whiff_roll)
 				if(user.client?.prefs.showrolls)
-					return check_zone(zone)
+					to_chat(user, span_warning("Precision fail. [chance2hit - 10]%. Roll to hit limb hit: [combined_whiff]%"))
+				return check_zone(zone)
 			else
+				if(user.client?.prefs.showrolls)
+					to_chat(user, span_warning("Double accuracy fail. [chance2hit - 10]%. Roll to hit limb missed: [combined_whiff]%"))
 				return BODY_ZONE_CHEST
-		else
-			if(user.client?.prefs.showrolls)
-				to_chat(user, span_warning("Double accuracy fail! [chance2hit]%"))
-			return BODY_ZONE_CHEST
 
 /mob/proc/get_generic_parry_drain()
 	return 30
