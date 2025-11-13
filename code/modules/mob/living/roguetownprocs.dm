@@ -26,7 +26,7 @@
 	if( (target.dir == turn(get_dir(target,user), 180)))
 		return zone
 
-	var/chance2hit = 0
+	var/chance2hit = 5
 
 	if(check_zone(zone) == zone)	//Are we targeting a big limb or chest?
 		chance2hit += 20
@@ -54,9 +54,9 @@
 		chance2hit -= ((10-user.STAPER)*10)
 
 	if(istype(user.rmb_intent, /datum/rmb_intent/aimed))
-		chance2hit += 25
+		chance2hit += 20
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
-		chance2hit -= 25
+		chance2hit -= 20
 
 	if(HAS_TRAIT(user, TRAIT_CURSE_RAVOX))
 		chance2hit -= 30
@@ -64,7 +64,7 @@
 
 	var/combined_whiff = chance2hit * user.STAPER * 0.05
 	chance2hit = CLAMP(chance2hit, 5, 95)
-	combined_whiff = CLAMP(combined_whiff, 2, 80)
+	combined_whiff = CLAMP(combined_whiff, 2, 50)
 	var/precision_roll = FALSE
 	var/accuracy_roll = FALSE
 	var/whiff_roll = FALSE
