@@ -631,7 +631,7 @@
 	if(!faller.mind)
 		faller.drop_all_held_items()
 	else
-		if(HAS_TRAIT(faller, TRAIT_MEDIUMARMOR) || HAS_TRAIT(faller, TRAIT_HEAVYARMOR) || HAS_TRAIT(faller, TRAIT_DODGEEXPERT) || HAS_TRAIT(faller, TRAIT_NOPAINSTUN))
+		if(faller.cmode && (HAS_TRAIT(faller, TRAIT_MEDIUMARMOR) || HAS_TRAIT(faller, TRAIT_HEAVYARMOR) || HAS_TRAIT(faller, TRAIT_DODGEEXPERT) || HAS_TRAIT(faller, TRAIT_NOPAINSTUN)))
 			return
 		faller.drop_all_held_items()
 
