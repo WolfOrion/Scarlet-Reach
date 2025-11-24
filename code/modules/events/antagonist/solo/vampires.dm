@@ -9,10 +9,9 @@
 	antag_flag = ROLE_NBEAST
 	shared_occurence_type = SHARED_HIGH_THREAT
 
-	weight = 4
-	max_occurrences = 1
-
-	denominator = 80
+	weight = 4 // frag out boy
+	max_occurrences = 2
+	denominator = 50
 
 	base_antags = 1
 	maximum_antags = 2
@@ -20,18 +19,21 @@
 	earliest_start = 0 SECONDS
 
 	typepath = /datum/round_event/antagonist/solo/vampire
-	antag_datum = /datum/antagonist/vampire
+	antag_datum = /datum/antagonist/vampirelord
 
-	restricted_roles = list(
+	restricted_roles = list( // basically just keep and church roles
 		"Grand Duke",
 		"Grand Duchess",
+		"Knight Captain",
 		"Consort",
 		"Dungeoneer",
 		"Sergeant",
-		"Men-at-arms",
+		"Men-at-Arms",
+		"Woman-at-Arms",
 		"Marshal",
 		"Merchant",
 		"Priest",
+		"Priestess",
 		"Acolyte",
 		"Martyr",
 		"Templar",
@@ -41,10 +43,17 @@
 		"Princess",
 		"Hand",
 		"Steward",
-		"Keeper",
+		"Clerk",
+		"Magos Thrall",
+		"Jester",
+		"Servant",
+		"Seneschal",
+		"Court Physician",
+		"Town Elder",
 		"Captain",
-		"Archivist",
+		"Loudmouth",
 		"Knight",
+		"Dame",
 		"Court Magician",
 		"Inquisitor",
 		"Orthodoxist",
@@ -63,8 +72,7 @@
 		var/datum/job/J = SSjob.GetJob(antag_mind.current?.job)
 		J?.current_positions = max(J?.current_positions-1, 0)
 		antag_mind.current.unequip_everything()
-		var/datum/antagonist/vampire/lord/lorde = new /datum/antagonist/vampire/lord()
-		antag_mind.add_antag_datum(lorde)
+		antag_mind.add_antag_datum(antag_datum)
 		leader = TRUE
 		return
 	else
@@ -72,6 +80,5 @@
 			var/datum/job/J = SSjob.GetJob(antag_mind.current?.job)
 			J?.current_positions = max(J?.current_positions-1, 0)
 			antag_mind.current.unequip_everything()
-			var/datum/antagonist/vampire/servante = new /datum/antagonist/vampire(forced_clan = null, generation = GENERATION_ANCILLAE)
-			antag_mind.add_antag_datum(servante)
+			antag_mind.add_antag_datum(/datum/antagonist/vampirelord/lesser)
 			return

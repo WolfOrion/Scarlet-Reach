@@ -34,9 +34,6 @@
 	/// Extra fluff added to the role explanation in class selection.
 	var/extra_context
 
-	/// Set to FALSE to skip apply_character_post_equipment() which applies virtue, flaw, loadout
-	var/applies_post_equipment = TRUE
-
 	/// Subclass skills. Levelled UP TO.
 	var/list/subclass_skills
 
@@ -93,8 +90,7 @@
 
 	// After the end of adv class equipping, apply a SPECIAL trait if able
 
-	if(applies_post_equipment)
-		apply_character_post_equipment(H)
+	apply_character_post_equipment(H)
 
 /datum/advclass/proc/post_equip(mob/living/carbon/human/H)
 	addtimer(CALLBACK(H,TYPE_PROC_REF(/mob/living/carbon/human, add_credit), TRUE), 20)
