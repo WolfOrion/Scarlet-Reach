@@ -92,7 +92,7 @@
 	H.remove_overlay(DAMAGE_LAYER)
 	return TRUE
 
-// WOLF SPECIFIC ITEMS //
+// MOLE SPECIFIC ITEMS //
 /obj/item/clothing/suit/roguetown/armor/skin_armor/moss_skin
 	slot_flags = null
 	name = "aged moss shell"
