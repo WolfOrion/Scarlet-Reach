@@ -308,7 +308,7 @@
     name = "Speak with Dead"
     range = 5
     overlay_state = "speakwithdead"
-	desc = "Commune with the spirit bound to a nearby corpse, allowing brief conversation between the living and the dead."
+    desc = "Commune with the spirit bound to a nearby corpse, allowing brief conversation between the living and the dead."
     releasedrain = 30
     recharge_time = 30 SECONDS
     req_items = list(/obj/item/clothing/neck/roguetown/psicross)

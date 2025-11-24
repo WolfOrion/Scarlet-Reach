@@ -108,8 +108,8 @@
 	return TRUE
 
 /datum/devotion/proc/try_add_spells(silent = FALSE)
-    if(suppress_grants)
-        return FALSE
+	if(suppress_grants)
+		return FALSE
 	if(length(patron.miracles))
 		for(var/spell_type in patron.miracles)
 			if(patron.miracles[spell_type] <= level)
