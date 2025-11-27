@@ -133,8 +133,45 @@
 	return TRUE
 
 /// Reshape face.
-
 /datum/surgery_step/reshape_face/construct // Just doing this so they can have their own surgery. Doesn't change anything.
 	surgery_flags = SURGERY_CONSTRUCT | SURGERY_INCISED | SURGERY_CLAMPED | SURGERY_RETRACTED
 	surgery_flags_blocked = null
+	skill_used = /datum/skill/craft/engineering
+
+/// Set Bones
+/datum/surgery_step/set_bone/construct
+	skill_used = /datum/skill/craft/engineering
+	surgery_flags = SURGERY_INCISED | SURGERY_RETRACTED | SURGERY_BROKEN | SURGERY_CONSTRUCT
+
+/// Manipulate Organs
+/datum/surgery_step/manipulate_organs
+	name = "Manipulate internal components"
+	skill_used = /datum/skill/craft/engineering
+	surgery_flags = SURGERY_INCISED | SURGERY_RETRACTED | SURGERY_CONSTRUCT
+
+/// Mold organs
+/datum/surgery_step/make_organs/construct
+	name = "Mold auxiliary components"
+	skill_used = /datum/skill/craft/engineering
+	surgery_flags = SURGERY_INCISED | SURGERY_RETRACTED | SURGERY_CONSTRUCT
+
+/datum/surgery_step/amputate/construct
+	skill_used = /datum/skill/craft/engineering
+	surgery_flags = SURGERY_INCISED | SURGERY_BROKEN | SURGERY_CONSTRUCT
+
+/datum/surgery_step/relocate_bone/construct
+	name = "Resecure internal support structure"
+	skill_used = /datum/skill/craft/engineering
+	surgery_flags = SURGERY_DISLOCATED | SURGERY_CONSTRUCT
+
+/datum/surgery_step/remove_external_organs/construct
+	surgery_flags = SURGERY_INCISED | SURGERY_CONSTRUCT
+	skill_used = /datum/skill/craft/engineering
+
+/datum/surgery_step/add_prosthetic/construct
+	surgery_flags = SURGERY_CONSTRUCT
+	skill_used = /datum/skill/craft/engineering
+
+/datum/surgery_step/remove_prosthetic/construct
+	surgery_flags = SURGERY_CONSTRUCT
 	skill_used = /datum/skill/craft/engineering
