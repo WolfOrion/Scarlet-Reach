@@ -58,9 +58,9 @@
 	new_role = "Warlord's Recruit"
 	overlay_state = "recruit_templar"
 	recruitment_faction = "War Party"
-	recruitment_message = "EAT WITH ME, %RECRUIT!"
-	accept_message = "I'M VERY HUNGRY!"
-	refuse_message = "NO?!"
+	recruitment_message = "Join my warband, %RECRUIT! For blood and gold!"
+	accept_message = "Blood and gold!"
+	refuse_message = "I serve no monsters!"
 
 /obj/effect/proc_holder/spell/self/convertrole/warlord/cast(list/targets,mob/user = usr)
 	. = ..()
