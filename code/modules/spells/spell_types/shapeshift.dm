@@ -1,6 +1,3 @@
-// Shapeshift spells - transforms into simple_animal mobs using shapeshift_holder system
-// Now extends from unified transformation base
-
 /obj/effect/proc_holder/spell/targeted/shapeshift
 	name = "Shapechange"
 	desc = ""

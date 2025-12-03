@@ -30,7 +30,6 @@
 		update_move_intent_slowdown() // Apply speed changes
 
 		AddSpell(new /obj/effect/proc_holder/spell/self/spiderclaw)
-		// Set name once on transformation, not every time
 
 
 // mirecrawler SPECIES DATUM //

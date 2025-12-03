@@ -33,7 +33,6 @@
 		update_move_intent_slowdown() // Apply speed changes
 
 		AddSpell(new /obj/effect/proc_holder/spell/self/moleclaw)
-		// Set name once on transformation, not every time
 
 
 // dendormole SPECIES DATUM //
