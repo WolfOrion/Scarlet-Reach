@@ -84,7 +84,7 @@
 	if(ringing)
 		return
 	if(istype(used_item, /obj/item/rogueweapon/mace/church))
-		playsound(loc, 'sound/misc/bell.ogg', 50, 1)
+		playsound(loc, 'sound/misc/bell.ogg', 60, 1)
 		visible_message(span_notice("[user] uses the [used_item] to ring the [src]."))
 		ring_bell()
 		ringing = TRUE
