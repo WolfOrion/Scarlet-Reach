@@ -502,6 +502,8 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/32x64/ogre_onmob.dmi'
 	icon_state = "ogre_plateboots"
 	allowed_race = OGRE_RACE_TYPES
+	max_integrity = 250
+	armor = ARMOR_BOOTS_PLATED_IRON
 
 /obj/item/clothing/shoes/roguetown/boots/ogre
 	name = "oversized boots"
@@ -510,3 +512,6 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/32x64/ogre_onmob.dmi'
 	icon_state = "ogre_boots"
 	allowed_race = OGRE_RACE_TYPES
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_TWIST)	//Same as gloves
+	max_integrity = 150	
+	armor = ARMOR_BOOTS

@@ -655,6 +655,7 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/32x64/ogre_onmob.dmi'
 	icon_state = "ogre_pants"
 	allowed_race = OGRE_RACE_TYPES
+	max_integrity = 250
 
 /obj/item/clothing/under/roguetown/chainlegs/ogre
 	name = "oversized chain chausses"

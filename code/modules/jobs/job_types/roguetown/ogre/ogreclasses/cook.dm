@@ -13,7 +13,7 @@
 		STATKEY_SPD = -2
 	)
 
-	traits_applied = list(TRAIT_CRITICAL_RESISTANCE, TRAIT_CALTROPIMMUNE, TRAIT_STRONGBITE)
+	traits_applied = list(TRAIT_BASHDOORS, TRAIT_CRITICAL_RESISTANCE, TRAIT_CALTROPIMMUNE, TRAIT_STRONGBITE)
 	subclass_skills = list(
 		/datum/skill/misc/athletics = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/knives = SKILL_LEVEL_JOURNEYMAN,

@@ -761,3 +761,4 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/32x64/ogre_onmob.dmi'
 	icon_state = "ogre_shirt"
 	allowed_race = OGRE_RACE_TYPES
+	max_integrity = 250
