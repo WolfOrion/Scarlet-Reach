@@ -37,6 +37,7 @@
 	if(isturf(A))
 		for(var/mob/living/M in A)
 			target = M
+			break
 	// but the rest of the logic is pretty much mob-only
 	if(ismob(target) && mmb_intent)
 		var/mob/living/M = target
