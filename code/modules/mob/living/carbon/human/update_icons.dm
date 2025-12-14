@@ -210,8 +210,8 @@ There are several things that need to be remembered:
 					armdam_overlays += get_cached_damage_overlay(limb_icon, "armdam_[body_zone]_b", ARM_DAMAGE_LAYER, offset_x, offset_y, bandage_color)
 
 			if(BP.wounds && length(BP.wounds))
-				for(var/datum/wound/wound as anything in BP.wounds)
-					if(wound?.mob_overlay)
+				for(var/datum/wound/wound in BP.wounds)
+					if(wound.mob_overlay)
 						var/wound_overlay = wound.mob_overlay
 						damage_overlays += get_cached_damage_overlay(limb_icon, "[body_zone]_[wound_overlay]", DAMAGE_LAYER, offset_x, offset_y)
 						legdam_overlays += get_cached_damage_overlay(limb_icon, "legdam_[body_zone]_[wound_overlay]", LEG_DAMAGE_LAYER, offset_x, offset_y)
@@ -240,8 +240,8 @@ There are several things that need to be remembered:
 					armdam_overlays += get_cached_damage_overlay(limb_icon, "armdam_[aux_zone]_b", ARM_DAMAGE_LAYER, offset_x, offset_y, bandage_color)
 
 				if(BP.wounds && length(BP.wounds))
-					for(var/datum/wound/wound as anything in BP.wounds)
-						if(wound?.mob_overlay)
+					for(var/datum/wound/wound in BP.wounds)
+						if(wound.mob_overlay)
 							var/wound_overlay = wound.mob_overlay
 							damage_overlays += get_cached_damage_overlay(limb_icon, "[aux_zone]_[wound_overlay]", DAMAGE_LAYER, offset_x, offset_y)
 							legdam_overlays += get_cached_damage_overlay(limb_icon, "legdam_[aux_zone]_[wound_overlay]", LEG_DAMAGE_LAYER, offset_x, offset_y)
