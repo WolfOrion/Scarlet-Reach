@@ -161,10 +161,11 @@
 				user.mind.add_sleep_experience(/datum/skill/misc/sewing, user.STAINT * total_XP)
 
 			cloth.obj_integrity = min(cloth.obj_integrity + total_repair, cloth.max_integrity)
+			integrity_percentage = (cloth.obj_integrity / cloth.max_integrity) * 100
 
 			playsound(loc, 'sound/foley/sewflesh.ogg', 50, TRUE, -2)
 			user.visible_message(span_info(repair_line))
-
+	
 			if(cloth.obj_broken)
 				var/do_fix = FALSE
 				if(unskilled && integrity_percentage >= 60)
@@ -183,6 +184,10 @@
 					cloth.obj_fix()
 					stringamt -= 1
 					return
+			else if (!cloth.obj_broken && !unskilled && cloth.shoddy_repair && integrity_percentage >= 100)
+				cloth.shoddy_repair = FALSE
+				to_chat(user, span_notice("My skilled hand has fully repaired this item."))
+			
 			if(do_after(user, AUTO_SEW_DELAY, target = I))
 				attack_obj(I, user)
 		return

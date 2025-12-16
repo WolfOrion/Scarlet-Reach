@@ -101,6 +101,7 @@
 			repair_percent *= attacked_item.max_integrity
 			exp_gained = min(attacked_item.obj_integrity + repair_percent, attacked_item.max_integrity) - attacked_item.obj_integrity
 			attacked_item.obj_integrity = min(attacked_item.obj_integrity + repair_percent, attacked_item.max_integrity)
+			integrity_percentage = (attacked_item.obj_integrity / attacked_item.max_integrity) * 100
 			if(repair_percent == 0.01) // If an inexperienced repair attempt has been successful
 				to_chat(user, span_warning("You fumble your way into slightly repairing [attacked_item]."))
 			else
@@ -123,6 +124,9 @@
 				if (do_fix)
 					attacked_item.obj_fix()
 					return
+			else if (!attacked_item.obj_broken && !unskilled && attacked_item.shoddy_repair && integrity_percentage >= 100)
+				attacked_item.shoddy_repair = FALSE
+				to_chat(user, span_notice("My skilled hand has fully repaired this item."))
 			blacksmith.mind.add_sleep_experience(attacked_item.anvilrepair, exp_gained/2) //We gain as much exp as we fix divided by 2
 			if(do_after(user, CLICK_CD_MELEE, target = attacked_object))
 				attack_obj(attacked_object, user)
