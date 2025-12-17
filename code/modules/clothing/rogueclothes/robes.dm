@@ -279,8 +279,8 @@
 	item_state = "desertgown"
 	color = null
 
-/obj/item/clothing/suit/roguetown/shirt/robe/pointfex
-	name = "pointfex's qaba"
+/obj/item/clothing/suit/roguetown/shirt/robe/pontifex
+	name = "pontifex's qaba"
 	desc = "A slimmed down, tighter fitting robe made of fine silks and fabrics. Somehow you feel more mobile in it than in the nude. Despite the light fabric, it offers decent protection."
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_CHOP)
 	armor = ARMOR_PADDED_GOOD
