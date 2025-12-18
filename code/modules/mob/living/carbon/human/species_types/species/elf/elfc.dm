@@ -9,18 +9,22 @@
 	origin_default = /datum/virtue/origin/raneshen
 	origin = "Raneshen"
 	base_name = "Elf"
+	shortdesc = "<b>Sun Elf</b><br>\
+	An elven subrace hailing from the region of Raneshen. Known for their zealous worship of Astrata and \
+	their widespread practices of slavery. Once ruled over Raneshen in the ancient Dominion of the Sun.<br>\
+	<span style='color: #6a8cb7;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;'><b> +1 SPD</b></span> </br>"
+
 	desc = "<b>Sun Elf</b><br>\
 	Native to the region of Raneshen, Sun Elves are an elven subspecies descended \
 	from the followers of the Solar Crusade who settled in the region a millenium \
-	ago. Tradition holds that Astrata guided their ancestors on a holy mission to \
-	carve out a divine Solar Dominion, one that would put the forces of darkness \
-	to the flame. <br>\
+	ago. Tradition holds that Astrata guided their ancestors on a holy mission to carve out \
+	a divine Dominion of the Sun, one that would purge all darkness with Astrata's holy light.<br><br>\
 	For most of their history, Sun Elves ruled over Raneshen as a deeply-hierarchical \
 	slaver state. But the past half-century has seen an eruption of religious warfare, \
 	with a massive Psydonian rebellion ultimately shattering the Solar Dominion. Since \
 	then, many Sun Elf refugees have traveled from the East. Some bring their Crusade \
 	along with them, while others yearn for sanctuary from the ever-encroaching \
-	Darkness — and many more seek only to selfish enrich themselves in this foreign land.<br>\
+	Darkness — and many more seek only to selfish enrich themselves in this foreign land.<br><br>\
 	Sun Elves are often deeply concerned with social order, castes, and superiority. Many \
 	are vain or power-hungry, and they tend to have imperious and assertive personalities. \
 	It is a common sentiment among Sun Elves that they are the 'chosen' of Astrata, leading \
